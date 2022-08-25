@@ -1,0 +1,100 @@
+body{
+    font-family: system-ui;
+    background-image: url("./images/background.png");
+    background-size: cover; 
+    background-repeat: no-repeat;
+
+}
+
+p~button{
+    color:rgb(162, 0, 255);
+}
+
+ul ol li {
+    color:rgb(255, 255, 255)
+}
+
+ul li {
+    color: green;
+}
+
+
+h4 + p{
+    color: rgb(86, 255, 156);
+}
+
+
+
+.middle{
+    text-align: center;
+    color: white;
+}
+
+.sub-title{
+    text-align: center;
+    color:rgb(228, 74, 74);
+}
+
+.red-box
+{
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    background: linear-gradient(150deg, rgb(141, 161, 251), rgb(175, 180, 255)    );
+    border: solid rgb(166, 108, 255);
+    border-radius: 6px;
+}
+
+
+.no-underline{
+    text-decoration: none;
+}
+
+
+#link{
+    color: rgb(255, 8, 255);
+} 
+
+#link:visited {
+    color: rgb(255, 115, 0);
+} 
+
+#link:hover {
+    color: rgb(0, 255, 106);
+}
+
+
+#top-hr{
+    border-top: 3px solid rgb(119, 0, 255);
+
+}
+
+#headshot{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    
+
+}
+
+
+
+
+
+
+#title{
+    color: rgb(235, 235, 231);
+    text-align: center;
+
+    text-shadow : 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}

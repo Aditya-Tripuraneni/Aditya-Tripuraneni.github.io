@@ -1,6 +1,6 @@
 body{
     font-family: system-ui;
-    background-image: url("./images/background.png");
+    background-color: #F07DEA;
     background-size: cover; 
     background-repeat: no-repeat;
 
@@ -23,6 +23,14 @@ h4 + p{
     color: rgb(86, 255, 156);
 }
 
+.container{
+    width: 75%;
+    margin: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .middle{
@@ -31,8 +39,10 @@ h4 + p{
 }
 
 .sub-title{
+    font-size: 2em;
     text-align: center;
-    color:rgb(228, 74, 74);
+    color: #9FC9F3;
+
 }
 
 .red-box
@@ -48,6 +58,18 @@ h4 + p{
 
 .no-underline{
     text-decoration: none;
+}
+
+/* #about-me{
+    font-size: 2em;
+    color: #9FC9F3;
+} */
+
+#intro{ 
+    color: white; 
+    font-size: 1.2em;
+    letter-spacing: 1.05;
+
 }
 
 
@@ -70,7 +92,7 @@ h4 + p{
 }
 
 #headshot{
-    border: 2px solid black;
+    border: 0.25em solid#9FC9F3;
     border-radius: 5px;
     margin: auto;
     display: block;

@@ -1,5 +1,5 @@
 body{
-    background: url("images/trials.jfif");
+    background-color: rgb(164, 96, 237);
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
@@ -8,17 +8,13 @@ body{
 
 
 a{
-    color: rgb(250, 50, 210); 
+    color: black; 
+    transition: 0.5s;
 }
 
 a:hover{
-    color:rgb(135, 91, 206);
+    color:white;
 }
-
-a:visited{
-    color: rgb(0, 255, 115);
-}
-
 
 .video-border{
     border: 5px solid rgb(0, 170, 255);
@@ -45,14 +41,15 @@ a:visited{
 .box{
     width: 15%;
     height: 15%;
-    border: 3px solid rgb(232, 255, 57);
+    border: 0.3em solid rgb(44, 220, 255);
+    border-radius: 1em;
     overflow: hidden;
     transition: 1s;
 
 }
 
 .box:hover{
-    transform: scale(1.2)
+    transform: scale(1.1)
 }
 
 
@@ -73,28 +70,15 @@ a:visited{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
     transition: 0.5s;
-    color: rgb(112, 112, 112);
+    color: black;
     text-decoration: none;
 }
 
 
 .code:hover{
-    background-color: transparent;
-    background-image: linear-gradient(45deg, #47ff7e, #4244af);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
+    transform: scale(1.3);
 
 }
-
-
-
-
-
-
 
 .picture{
     width:  100%;
@@ -103,34 +87,51 @@ a:visited{
     vertical-align: bottom;
 } 
 
+.hover{
+    margin: auto;
+    justify-content: center;
+    width: 5%;
+    transition: 1s;
+}
+
+.hover:hover{
+    transform: scale(1.3);
+}
+
+
 
 #back-page{
     font-size: 2em;
+    transition: 0.5s;
 }
 
 #back-page:hover{
-    color: rgb(28, 255, 236);
+    color: white;
 }
 
 #link{
-    color: rgb(255, 8, 255);
+    color: black;
+    transition: 0.5s;
+
 } 
 
 #link:visited {
-    color: rgb(255, 115, 0);
+    color: black;
 } 
 
 #link:hover {
-    color: rgb(0, 255, 106);
+    color: white;
 }
 
 #title{
-    color: rgb(0, 174, 255);
+    color: black;
     font-size: 3em;
+    transition: 0.5s;
+
 }
 
 #title:hover{
-    color: rgb(44, 255, 97);
+    color: white;
 }
 
 #top-border{
@@ -139,6 +140,6 @@ a:visited{
 }
 
 #intro{
-    color: rgb(255, 85, 241);
+    color: black;
 
 }

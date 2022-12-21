@@ -1,6 +1,6 @@
 body{
     font-family: system-ui;
-    background-color: #F07DEA;
+    background-color: #BFB8CB;
     background-size: cover; 
     background-repeat: no-repeat;
 
@@ -60,7 +60,7 @@ h4 + p{
 .sub-title{
     font-size: 2em;
     text-align: center;
-    color: #9FC9F3;
+    color: rgb(93, 91, 109);
 
 }
 
@@ -69,8 +69,8 @@ h4 + p{
     margin: auto;
     width: 300px;
     height: 100px;
-    background: linear-gradient(150deg, rgb(141, 161, 251), rgb(175, 180, 255)    );
-    border: solid rgb(166, 108, 255) 0.5em;
+    background: linear-gradient(150deg, rgb(168, 169, 172), rgb(94, 100, 194)    );
+    border: solid rgb(248, 224, 184) 0.5em;
     border-radius: 6px;
 }
 
@@ -126,18 +126,29 @@ h4 + p{
 
 
 #top-hr{
-    border-top: 3px solid rgb(119, 0, 255);
+    border-top: 3px solid rgb(255, 255, 255);
 
 }
 
 #headshot{
-    border: 0.25em solid#9FC9F3;
+    border: 0.25em solid#101111;
     border-radius: 5px;
     margin: auto;
     display: block;
     
 
 }
+
+#projects{
+    font-size: 2em;
+    transition: 0.5s;
+    color: rgb(0, 0, 0); 
+}
+
+#projects:hover{
+    color: white;
+}
+
 
 #space-java{
     padding-left: 0.5em; 
@@ -174,14 +185,14 @@ h4 + p{
     color: rgb(235, 235, 231);
     text-align: center;
 
-    text-shadow : 0 1px 0 #ccc,
+    /* text-shadow : 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
                0 6px 1px rgba(0,0,0,.1),
                0 0 5px rgba(0,0,0,.1),
                0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
+               0 3px 5px rgba(0,0,0,.2), */
+               /* 0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+               0 20px 20px rgba(0,0,0,.15); */
 }

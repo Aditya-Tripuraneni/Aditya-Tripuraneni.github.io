@@ -36,6 +36,52 @@ a:hover{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    /* border: solid white 3px; */
+}
+
+
+.container_two{ /* sub container*/
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    /* border: solid blue 4px; */
+}
+
+.box-holder{ 
+    margin: 1em;
+
+    height: 100%;
+    width: 20%;
+    /* border: 0.3em solid red; */
+    border-radius: 1em; 
+    
+}
+
+.box_two{
+    height: 100%;
+    overflow: hidden;
+    /* border: 0.3em solid red; */
+    border-radius: 1em; 
+    margin: 1em;
+}
+
+#deflection-picture{ 
+    width: 75%;
+    height: 100%;
+    overflow: hidden;
+    /* border: 0.3em solid red; */
+    border-radius: 1em; 
+
+    margin: 0 0 3em 9em;
+}
+
+.text_content{ 
+    width: 80%;
+    height: 100%; 
+    /* border: 0.2em solid green;  */
+    margin: 1em; 
+    border-radius: 1em;
+    
 }
 
 .box{
@@ -91,7 +137,7 @@ a:hover{
     margin: auto;
     justify-content: center;
     width: 5%;
-    transition: 0.2s;
+    transition: 0.5s;
 }
 
 .hover:hover{
@@ -139,6 +185,7 @@ a:hover{
 }
 
 #intro{
-    color: black;
+    color: rgb(175, 177, 168);
+    text-align: center;
 
 }

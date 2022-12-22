@@ -6,6 +6,21 @@ body{
 
 }
 
+#togglemode{
+    border: none; 
+    border-radius: 50%;
+    width: 3em;
+    margin-right: 1em;
+    height: 3em; 
+    transition: 0.5s; 
+}
+
+#togglemode:hover{
+    transform: scale(1.3);
+
+}
+
+
 p~button{
     color:rgb(162, 0, 255);
 }
@@ -29,6 +44,7 @@ h4 + p{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    /* border: solid red 3px;  */
 }
 
 .sub-container{ 
@@ -38,12 +54,14 @@ h4 + p{
 }
 
 .icon {
-    border-radius: 2em;
+    border-radius: 50%;
     transition: 0.5s;
     height: 2em;
     width: 2em; 
 
 }
+
+
 
 .icon:hover{
     transform: scale(1.3);
@@ -67,6 +85,8 @@ h4 + p{
 .red-box
 {
     margin: auto;
+    margin-right: 13.25em;
+    
     width: 300px;
     height: 100px;
     background: linear-gradient(150deg, rgb(168, 169, 172), rgb(94, 100, 194)    );

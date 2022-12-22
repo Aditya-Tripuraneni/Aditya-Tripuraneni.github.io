@@ -89,17 +89,13 @@ a:hover{
     /* border: 0.3em solid red; */
     border-radius: 1em; 
     margin: 1em;
+    transition: 1s
 }
 
-#deflection-picture{ 
-    width: 75%;
-    height: 100%;
-    overflow: hidden;
-    /* border: 0.3em solid red; */
-    border-radius: 1em; 
-
-    margin: 0 0 3em 9em;
+.box_two:hover{
+    transform: scale(1.1)
 }
+
 
 .text_content{ 
     width: 80%;
@@ -133,6 +129,7 @@ a:hover{
 }
 
 
+
 .code-box:hover{
     transform: scale(1.3);
 
@@ -152,12 +149,24 @@ a:hover{
 
 }
 
+
+.description{ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+
+}
+
 .picture{
     width:  100%;
     height: 100%; 
     object-fit: cover;
     vertical-align: bottom;
 } 
+
+
+
 
 .hover{
     margin: auto;
@@ -215,3 +224,13 @@ a:hover{
     text-align: center;
 
 }
+
+.depth-picture{ 
+    width: 50%;
+    height: 75%;
+    overflow: hidden;
+    background-size: cover;
+    border-radius: 1em; 
+    margin: 2em 0 3em 15em;
+}
+

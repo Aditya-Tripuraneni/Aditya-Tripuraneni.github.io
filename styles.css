@@ -49,6 +49,7 @@ ul ol li {
     background-color: none;
     height: 2em;
     width: 2em; 
+    box-shadow: 0.05em 0.1em rgb(32, 28, 28)
 
 }
 
@@ -156,7 +157,7 @@ ul ol li {
     border-radius: 5px;
     margin: auto;
     display: block;
-    animation: slideIn 2s ease-in-out forwards;
+    animation: slideInRight 2s ease-in-out forwards;
 
 
 }
@@ -224,6 +225,7 @@ ul ol li {
 
 }
 
+
 #name{ 
     animation: nameSlideUp 2s ease forwards 0.5s;
 }
@@ -239,7 +241,7 @@ ul ol li {
 }
 
 
-@keyframes slideIn {
+@keyframes slideInRight {
     0% {
       transform: translateX(50em) scale(.01);
     }
@@ -247,6 +249,16 @@ ul ol li {
       transform: translateX(0px) scale(1);
     }
   }
+
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-50em) scale(.01);
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+    }
+  }
+
 
 
 @keyframes expand {
@@ -271,7 +283,11 @@ ul ol li {
 }
 
 @media (prefers-reduced-motion: no-preference){
-    .subtitle-animation{
+    .subtitle-animation{ /*triggers left right slide in animation*/
         animation: expand 2s 1;
+    }
+
+    .subtitle-animation-2{   /*triggers left slide in animation*/
+        animation: slideInLeft 2s 1;
     }
 }

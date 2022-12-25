@@ -1,22 +1,34 @@
 isDark = true 
 
-
-observer = new IntersectionObserver(entries => {
+observerTopBottomTitles = new IntersectionObserver(entries => {
     entries.forEach(entry =>{
         if (entry.isIntersecting)
         {
             entry.target.classList.add("subtitle-animation")
         }
     })
+
 })
 
+aboutEl = document.getElementById("about-me")
+contactEl = document.getElementById("contact")
 
-subTitleEl = document.querySelectorAll('.sub-title')
+observerTopBottomTitles.observe(aboutEl)
+observerTopBottomTitles.observe(contactEl)
 
 
-for (var i = 0; i < subTitleEl.length; i ++){
-    observer.observe(subTitleEl[i])
-}
+
+observerMiddleTitle = new IntersectionObserver(entries => {
+    entries.forEach(entry =>{
+        if (entry.isIntersecting)
+        {
+            entry.target.classList.add("subtitle-animation-2")
+        }
+    })
+})
+
+timelineEl= document.getElementById("time-line")
+observerMiddleTitle.observe(timelineEl)
 
 
 function changeMode(){
@@ -25,7 +37,7 @@ function changeMode(){
     headerTwo = document.getElementsByTagName("h2")
 
     headerThree = document.getElementsByTagName("h3")
-    headerFive = document.getElementsByTagName("h4")
+    headerFour = document.getElementsByTagName("h4")
     paragraphs = document.getElementsByTagName("p")
 
  
@@ -36,8 +48,8 @@ function changeMode(){
             headerThree[i].style.color = "black"
         }
 
-        for (var i = 0; i < headerFive.length; i ++){
-            headerFive[i].style.color = "black"
+        for (var i = 0; i < headerFour.length; i ++){
+            headerFour[i].style.color = "black"
         }
 
         for (var i = 0; i < paragraphs.length; i ++){
@@ -55,11 +67,11 @@ function changeMode(){
     }
     else{
         for (var i = 0; i < headerThree.length; i ++){
-            headerThree[i].style.color = "white"
+            headerThree[i].style.color = "#5D5B6D"
         }
 
-        for (var i = 0; i < headerFive.length; i ++){
-            headerFive[i].style.color = "white"
+        for (var i = 0; i < headerFour.length; i ++){
+            headerFour[i].style.color = "white"
         }
 
         for (var i = 0; i < paragraphs.length; i ++){

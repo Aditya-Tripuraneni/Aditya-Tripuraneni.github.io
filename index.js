@@ -1,13 +1,35 @@
 isDark = true 
 
+
+observer = new IntersectionObserver(entries => {
+    entries.forEach(entry =>{
+        if (entry.isIntersecting)
+        {
+            entry.target.classList.add("subtitle-animation")
+        }
+    })
+})
+
+
+subTitleEl = document.querySelectorAll('.sub-title')
+
+
+for (var i = 0; i < subTitleEl.length; i ++){
+    observer.observe(subTitleEl[i])
+}
+
+
 function changeMode(){
     backgroundColor = document.getElementById("body")
-
+    
     headerTwo = document.getElementsByTagName("h2")
 
     headerThree = document.getElementsByTagName("h3")
-    headerFive = document.getElementsByTagName("h5")
+    headerFive = document.getElementsByTagName("h4")
     paragraphs = document.getElementsByTagName("p")
+
+ 
+
     if (isDark == true)
     {
         for (var i = 0; i < headerThree.length; i ++){

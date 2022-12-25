@@ -3,8 +3,6 @@ body{
     background-color: #BFB8CB;
     background-size: cover; 
     background-repeat: no-repeat;
-
-
 }
 
 section{
@@ -14,7 +12,9 @@ section{
     align-items: center;
 }
 
-
+h4{
+    animation: fadeIn 3s; 
+}
 
 p~button{
     color:rgb(162, 0, 255);
@@ -24,14 +24,6 @@ ul ol li {
     color:rgb(255, 255, 255)
 }
 
-ul li {
-    color: green;
-}
-
-
-h4 + p{
-    color: rgb(86, 255, 156);
-}
 
 .container{
     width: 75%;
@@ -64,7 +56,6 @@ h4 + p{
 
 .icon:hover{
     transform: scale(1.3);
-    
 }
 
 
@@ -72,6 +63,7 @@ h4 + p{
 .middle{
     text-align: center;
     color: white;
+    
 }
 
 .sub-title{
@@ -124,29 +116,6 @@ h4 + p{
     background-color: rgb(119, 255, 241);
 }
 
-.wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 373px;
-    transform: rotateY(180deg);
-}
-
-.wave .shape-fill {
-    fill: #00FFD7;
-}
-
-
 
 #contacts{
     width: 50%;
@@ -187,9 +156,11 @@ h4 + p{
     border-radius: 5px;
     margin: auto;
     display: block;
-    
+    animation: slideIn 2s ease-in-out forwards;
+
 
 }
+
 
 #projects{
     font-size: 2em;
@@ -236,17 +207,6 @@ h4 + p{
 #title{
     color: rgb(235, 235, 231);
     text-align: center;
-
-    /* text-shadow : 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2), */
-               /* 0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15); */
 }
 
 
@@ -262,4 +222,56 @@ h4 + p{
 #togglemode:hover{
     transform: scale(1.3);
 
+}
+
+#name{ 
+    animation: nameSlideUp 2s ease forwards 0.5s;
+}
+
+
+@keyframes nameSlideUp{
+    0% {
+        transform: translateY(-15em);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+}
+
+
+@keyframes slideIn {
+    0% {
+      transform: translateX(50em) scale(.01);
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+    }
+  }
+
+
+@keyframes expand {
+    0% {
+      transform: translateX(50em);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+@keyframes fadeIn{
+    0% {opacity: 0;};
+
+    100% {opacity: 1;};
+    0% { color: #eb3349  ; };
+    25% { color: #516395; }
+    50% { color: #2193b0 ; }
+    75% { color: #6dd5ed; }
+    100% { color: #06beb6 ; }
+    
+}
+
+@media (prefers-reduced-motion: no-preference){
+    .subtitle-animation{
+        animation: expand 2s 1;
+    }
 }

@@ -204,6 +204,11 @@ a:hover{
     color: black;
     font-size: 3em;
     transition: 0.5s;
+    text-align: center ;
+    width: 20%;
+    padding-left: 1em;
+    display: flex; 
+    margin: auto;
 
 }
 

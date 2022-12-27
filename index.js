@@ -1,5 +1,11 @@
 isDark = true 
 
+aboutEl = document.getElementById("about-me")
+contactEl = document.getElementById("contact")
+timelineEl= document.getElementById("time-line")
+webInfoEl = document.getElementById("web-info")
+console.log(webInfoEl)
+
 observerTopBottomTitles = new IntersectionObserver(entries => {
     entries.forEach(entry =>{
         if (entry.isIntersecting)
@@ -10,12 +16,9 @@ observerTopBottomTitles = new IntersectionObserver(entries => {
 
 })
 
-aboutEl = document.getElementById("about-me")
-contactEl = document.getElementById("contact")
 
 observerTopBottomTitles.observe(aboutEl)
 observerTopBottomTitles.observe(contactEl)
-
 
 
 observerMiddleTitle = new IntersectionObserver(entries => {
@@ -27,8 +30,20 @@ observerMiddleTitle = new IntersectionObserver(entries => {
     })
 })
 
-timelineEl= document.getElementById("time-line")
 observerMiddleTitle.observe(timelineEl)
+
+
+observeText = new IntersectionObserver(entries => {
+    entries.forEach(entry =>{
+        if (entry.isIntersecting)
+        {
+            entry.target.classList.add("change-colors")
+        }
+    })
+})
+
+observeText.observe(webInfoEl)
+
 
 
 function changeMode(){

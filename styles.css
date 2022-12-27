@@ -12,9 +12,6 @@ section{
     align-items: center;
 }
 
-h4{
-    animation: fadeIn 3s; 
-}
 
 p~button{
     color:rgb(162, 0, 255);
@@ -33,7 +30,6 @@ ul ol li {
     justify-content: space-evenly;
     /* border: solid red 3px;  */
 }
-
 
 
 .sub-container{ 
@@ -64,6 +60,8 @@ ul ol li {
 .middle{
     text-align: center;
     color: white;
+    /* border: 2px solid red;  */
+    align-items: center;
     
 }
 
@@ -76,14 +74,14 @@ ul ol li {
 
 .red-box
 {
-    margin: auto;
-    margin-right: 12.625em;
-    
     width: 300px;
     height: 100px;
     background: linear-gradient(150deg, rgb(168, 169, 172), rgb(94, 100, 194)    );
     border: solid rgb(248, 224, 184) 0.5em;
     border-radius: 6px;
+    /* border: solid green 3px; */
+    margin: 0 auto;
+
 }
 
 
@@ -210,14 +208,15 @@ ul ol li {
     text-align: center;
 }
 
-
 #togglemode{
     border: none; 
     border-radius: 50%;
     width: 3em;
-    margin-right: 1em;
     height: 3em; 
     transition: 0.5s; 
+    margin: auto;
+    margin-bottom:  1em;
+    display: flex;
 }
 
 #togglemode:hover{
@@ -274,7 +273,7 @@ ul ol li {
     0% {opacity: 0;};
 
     100% {opacity: 1;};
-    0% { color: #eb3349  ; };
+    10% { color: #eb3349  ; };
     25% { color: #516395; }
     50% { color: #2193b0 ; }
     75% { color: #6dd5ed; }
@@ -284,10 +283,14 @@ ul ol li {
 
 @media (prefers-reduced-motion: no-preference){
     .subtitle-animation{ /*triggers left right slide in animation*/
-        animation: expand 2s 1;
+        animation: slideInRight 2s 1;
     }
 
     .subtitle-animation-2{   /*triggers left slide in animation*/
         animation: slideInLeft 2s 1;
+    }
+
+    .change-colors{
+        animation: fadeIn 2s 1; 
     }
 }

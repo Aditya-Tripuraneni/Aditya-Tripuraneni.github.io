@@ -1,8 +1,9 @@
 body{
     font-family: system-ui;
-    background-color: #BFB8CB;
+    background-color: #2a2a2a;
     background-size: cover; 
     background-repeat: no-repeat;
+    margin: 0;
 }
 
 section{
@@ -12,13 +13,8 @@ section{
     align-items: center;
 }
 
-
-p~button{
-    color:rgb(162, 0, 255);
-}
-
-ul ol li {
-    color:rgb(255, 255, 255)
+h3{
+    color:white; 
 }
 
 
@@ -26,8 +22,17 @@ ul ol li {
     width: 75%;
     margin: auto; 
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: baseline;
+    justify-content: center;
+    /* border: solid red 3px;  */
+}
+
+.container2{
+    width: 75%;
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    padding-left: 5%; 
     /* border: solid red 3px;  */
 }
 
@@ -50,11 +55,9 @@ ul ol li {
 }
 
 
-
 .icon:hover{
     transform: scale(1.3);
 }
-
 
 
 .middle{
@@ -68,7 +71,7 @@ ul ol li {
 .sub-title{
     font-size: 2em;
     text-align: center;
-    color: rgb(93, 91, 109);
+    color: white;
 
 }
 
@@ -90,22 +93,35 @@ ul ol li {
 }
 
 .time-linebox{
-    width: 10%;
-    height: 15%;
-    margin: auto; 
+    width: 20%;
     border-radius: 2px;
+    /* border: 3px blue solid;  */
 }
 
+.circle-holder{ 
+    /* border: 3px solid black; */
+    width: 2em;
+    height: 2em; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-holder{
+    /* border: 3px orange solid;  */
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1vw;
+}
 
 .circle{
     height: 2em;
     width: 2em;
     background-color: rgb(0, 248, 157);
     border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    margin: auto;
-    transition: 0.3s; 
+    display: inline-flex;
+    justify-content: center;    
+    transition: 0.5s; 
     
 }
 
@@ -132,19 +148,6 @@ ul ol li {
 }
 
 
-#link{
-    color: rgb(255, 8, 255);
-} 
-
-#link:visited {
-    color: rgb(255, 115, 0);
-} 
-
-#link:hover {
-    color: rgb(0, 255, 106);
-}
-
-
 #top-hr{
     border-top: 3px solid rgb(255, 255, 255);
 
@@ -164,43 +167,12 @@ ul ol li {
 #projects{
     font-size: 2em;
     transition: 0.5s;
-    color: rgb(0, 0, 0); 
+    color: rgb(0, 221, 255); 
 }
 
 #projects:hover{
     color: rgb(228, 255, 110);
 }
-
-
-#space-java{
-    padding-left: 0.5em; 
-}
-
-#space-first{
-    padding: 1em; 
-}
-
-#space-vision{
-    padding-left: 0.5em; 
-}
-
-#space-front{
-    padding: 0.5em; 
-}
-
-
-#java{
-    padding-left: 2em
-}
-
-#hello-world{
-    padding-left: 1em;
-}
-
-#computer-vision{
-    padding-left: 1em;
-}
-
 
 
 #title{
@@ -228,6 +200,20 @@ ul ol li {
 #name{ 
     animation: nameSlideUp 2s ease forwards 0.5s;
 }
+
+.box{
+    animation: slideInRight;
+    width: 10%;
+    position: fixed;
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+    background-color: #BFB8CB;;
+    justify-content: space-evenly;
+    margin: 0;
+    text-align: center; 
+}
+
 
 
 @keyframes nameSlideUp{
@@ -292,5 +278,11 @@ ul ol li {
 
     .change-colors{
         animation: fadeIn 2s 1; 
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .text-holder{
+       font-size: 1vw;;
     }
 }

@@ -1,4 +1,5 @@
 isDark = true 
+isOpen = false
 
 aboutEl = document.getElementById("about-me")
 contactEl = document.getElementById("contact")
@@ -44,7 +45,19 @@ observeText = new IntersectionObserver(entries => {
 
 observeText.observe(webInfoEl)
 
+function slideNavBar(){
+    if (isOpen == true){
+        isOpen = false //closing nav bar
+        console.log("Nav bar has just been closed")
 
+    }
+    else{
+        isOpen = true //openning nav bar
+        console.log("Nav bar has just been opened")
+
+        
+    }
+}
 
 function changeMode(){
     backgroundColor = document.getElementById("body")
@@ -82,7 +95,7 @@ function changeMode(){
     }
     else{
         for (var i = 0; i < headerThree.length; i ++){
-            headerThree[i].style.color = "#5D5B6D"
+            headerThree[i].style.color = "white"
         }
 
         for (var i = 0; i < headerFour.length; i ++){
@@ -97,7 +110,7 @@ function changeMode(){
             headerTwo[i].style.color = "white"
         }
 
-        backgroundColor.style.background = "#BFB8CB"
+        backgroundColor.style.background = "#2a2a2a"
         headerTwo[0].style.color = "white"
         isDark = true
     }

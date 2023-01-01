@@ -1,11 +1,21 @@
 isDark = true 
 isOpen = false
 
+nameEl = document.getElementById("name")
 aboutEl = document.getElementById("about-me")
 contactEl = document.getElementById("contact")
 timelineEl= document.getElementById("time-line")
 webInfoEl = document.getElementById("web-info")
-console.log(webInfoEl)
+
+observeName = new IntersectionObserver(entries =>{
+    entries.forEach(entry=>{
+        if (entry.isIntersecting){
+            entry.target.classList.add("name-animation")
+        }
+    })
+})
+
+observeName.observe(nameEl)
 
 observerTopBottomTitles = new IntersectionObserver(entries => {
     entries.forEach(entry =>{

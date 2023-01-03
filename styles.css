@@ -23,7 +23,7 @@ body{
     overflow: hidden;
     width: 100%; 
     margin: auto;
-    padding-left: 3%;
+    padding-left: 2%;
     justify-content: center; 
     height: 100%;
     background-color: #2a2a2a;
@@ -157,6 +157,16 @@ h3{
     background-color: rgb(119, 255, 241);
 }
 
+.side-link{
+    transition: 1s;
+    color: white;
+}
+
+.side-link:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: rgb(1,1,1)
+}
 
 #contacts{
     width: 50%;
@@ -228,7 +238,6 @@ h3{
 
 #togglemode:hover{
     transform: scale(1.3);
-
 }
 
 

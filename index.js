@@ -7,6 +7,13 @@ contactEl = document.getElementById("contact")
 timelineEl= document.getElementById("time-line")
 webInfoEl = document.getElementById("web-info")
 
+headerTwo = document.getElementsByTagName("h2")
+
+headerThree = document.getElementsByTagName("h3")
+headerFour = document.getElementsByTagName("h4")
+paragraphs = document.getElementsByTagName("p")
+
+
 observeName = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
         if (entry.isIntersecting){
@@ -70,59 +77,60 @@ function slideNavBar(){
 }
 
 function changeMode(){
-    backgroundColor = document.getElementById("body")
-    
-    headerTwo = document.getElementsByTagName("h2")
-
-    headerThree = document.getElementsByTagName("h3")
-    headerFour = document.getElementsByTagName("h4")
-    paragraphs = document.getElementsByTagName("p")
-
- 
+    let backgroundColor = document.getElementById("background")
 
     if (isDark == true)
     {
-        for (var i = 0; i < headerThree.length; i ++){
-            headerThree[i].style.color = "black"
-        }
-
-        for (var i = 0; i < headerFour.length; i ++){
-            headerFour[i].style.color = "black"
-        }
-
-        for (var i = 0; i < paragraphs.length; i ++){
-            paragraphs[i].style.color = "black"
-        }
-
-        for (var i = 0; i < headerTwo.length; i ++){
-            headerTwo[i].style.color = "black"
-        }
-
+        changeWebsiteBlack()
         backgroundColor.style.background = "white"
+        backgroundColor.classList.add("trial")
         headerTwo[0].style.color = "black"
-
         isDark = false
     }
-    else{
-        for (var i = 0; i < headerThree.length; i ++){
-            headerThree[i].style.color = "white"
-        }
-
-        for (var i = 0; i < headerFour.length; i ++){
-            headerFour[i].style.color = "white"
-        }
-
-        for (var i = 0; i < paragraphs.length; i ++){
-            paragraphs[i].style.color = "white"
-        }
-
-        for (var i = 0; i < paragraphs.length; i ++){
-            headerTwo[i].style.color = "white"
-        }
-
+    else
+    {
+        changeWebsiteWhite()
         backgroundColor.style.background = "#2a2a2a"
+        backgroundColor.classList.add("trial")
         headerTwo[0].style.color = "white"
         isDark = true
     }
 
+
+}
+
+function changeWebsiteWhite(){
+    for (var i = 0; i < headerThree.length; i ++){
+        headerThree[i].style.color = "white"
+    }
+
+    for (var i = 0; i < headerFour.length; i ++){
+        headerFour[i].style.color = "white"
+    }
+
+    for (var i = 0; i < paragraphs.length; i ++){
+        paragraphs[i].style.color = "white"
+    }
+
+    for (var i = 0; i < paragraphs.length; i ++){
+        headerTwo[i].style.color = "white"
+    }
+}
+
+function changeWebsiteBlack(){
+    for (var i = 0; i < headerThree.length; i ++){
+        headerThree[i].style.color = "black"
+    }
+
+    for (var i = 0; i < headerFour.length; i ++){
+        headerFour[i].style.color = "black"
+    }
+
+    for (var i = 0; i < paragraphs.length; i ++){
+        paragraphs[i].style.color = "black"
+    }
+
+    for (var i = 0; i < headerTwo.length; i ++){
+        headerTwo[i].style.color = "black"
+    }
 }

@@ -11,12 +11,23 @@ headerTwo = document.getElementsByTagName("h2")
 
 subTitleEl = document.getElementsByClassName("sub-title")
 timeLineNames = document.getElementsByClassName("time")
-console.log(timeLineNames)
 
 
 headerFour = document.getElementsByTagName("h4")
 paragraphs = document.getElementsByTagName("p")
 
+navAboutEl = document.getElementById("nav-about")
+navContactMeEl = document.getElementById("nav-contact-me")
+
+navAboutEl.addEventListener("click", function(e){
+    e.preventDefault()
+    document.querySelector(this.getAttribute("href")).scrollIntoView({behavior: "smooth"})
+})
+
+navContactMeEl.addEventListener("click", function(e){
+    e.preventDefault()
+    document.querySelector(this.getAttribute("href")).scrollIntoView({behavior: "smooth"})
+})
 
 observeName = new IntersectionObserver(entries =>{
     entries.forEach(entry=>{
@@ -152,4 +163,9 @@ function changeWebsiteBlack(){
     for (let i = 0; i < headerTwo.length; i ++){
         headerTwo[i].style.color = "black"
     }
+}
+
+function downloadPDF(){
+    console.log("Downloading PDF...")
+    window.open("https://drive.google.com/file/d/1NlI15XYdXO9-zX8j140QXfZGX0vG-ce-/view?usp=sharing", "_blank")
 }

@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => ({
   // '/' in dev (localhost), GitHub Pages subpath in prod
   base: mode === 'production' ? '/Aditya-Tripuraneni.github.io/' : '/',
   build: {
+    outDir: 'docs', // Build to docs folder instead of dist
     // Ensure proper MIME types for GitHub Pages
     assetsInlineLimit: 0,
     rollupOptions: {
@@ -14,7 +15,8 @@ export default defineConfig(({ mode }) => ({
         // Use legacy chunk names without hashes for better compatibility
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        assetFileNames: 'assets/[name].[ext]',
+        format: 'iife'
       }
     }
   }

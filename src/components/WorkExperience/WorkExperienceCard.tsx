@@ -1,5 +1,5 @@
 import React from 'react';
-import type { WorkExperience } from '../../types';
+import type { WorkExperience } from '../../types/index';
 import styles from './WorkExperienceCard.module.css';
 
 interface WorkExperienceCardProps {
@@ -19,7 +19,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ experience }) =
       </div>
       
       <div className={styles.description}>
-        {experience.description.map((item, index) => (
+        {experience.description.map((item: string, index: number) => (
           <div key={index} className={styles.descriptionItem}>
             {item}
           </div>
@@ -29,7 +29,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ experience }) =
       {/* Only show achievements section if there are real achievements (not placeholder) */}
       {experience.achievements.length > 0 && experience.achievements[0] !== 'placeholder' && (
         <div className={styles.achievements}>
-          {experience.achievements.map((achievement, index) => (
+          {experience.achievements.map((achievement: string, index: number) => (
             <div key={index} className={styles.achievementItem}>
               {achievement}
             </div>

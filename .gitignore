@@ -13,6 +13,9 @@ dist-ssr
 *.local
 .vite
 
+# Development index.html (needed for build but not committed)
+index.html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Project } from '../../types';
+import type { Project } from '../../types/index';
 import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {

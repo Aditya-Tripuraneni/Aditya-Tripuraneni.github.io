@@ -8,15 +8,13 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/Aditya-Tripuraneni.github.io/' : '/',
   build: {
     outDir: 'docs', // Build to docs folder instead of dist
-    // Ensure proper MIME types for GitHub Pages
-    assetsInlineLimit: 0,
+    cssCodeSplit: false, // Ensure CSS is in a separate file
     rollupOptions: {
       output: {
         // Use legacy chunk names without hashes for better compatibility
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]',
-        format: 'iife'
+        assetFileNames: 'assets/[name].[ext]'
       }
     }
   }

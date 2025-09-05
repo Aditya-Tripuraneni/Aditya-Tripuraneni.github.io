@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Hero.module.css';
+import QuickReference from '../QuickReference/QuickReference';
 
 const Hero: React.FC = () => {
+  const [isQuickRefOpen, setIsQuickRefOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openQuickReference = () => {
+    setIsQuickRefOpen(true);
+  };
+
+  const closeQuickReference = () => {
+    setIsQuickRefOpen(false);
   };
 
   return (
@@ -16,17 +27,19 @@ const Hero: React.FC = () => {
         <h1 className={styles.name}>Aditya Tripuraneni</h1>
         <h2 className={styles.title}>Software Engineer</h2>
         <div className={styles.cta}>
-          <button 
+          <a 
+            href="https://drive.google.com/file/d/1116PndjxSuzK9IcwTpK6xwHc6ypj16LT/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
-            onClick={() => scrollToSection('experience')}
           >
-            View My Experience
-          </button>
+            Resume
+          </a>
           <button 
             className="btn-secondary"
-            onClick={() => scrollToSection('projects')}
+            onClick={openQuickReference}
           >
-            See My Projects
+            Cheat Sheet
           </button>
         </div>
       </div>
@@ -35,8 +48,13 @@ const Hero: React.FC = () => {
         className={styles.scrollIndicator}
         onClick={() => scrollToSection('experience')}
       >
-        Scroll to explore
+        Scroll to explore more 
       </div>
+
+      <QuickReference 
+        isOpen={isQuickRefOpen}
+        onClose={closeQuickReference}
+      />
     </section>
   );
 };

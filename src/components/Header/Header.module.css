@@ -61,6 +61,23 @@
   width: 100%;
 }
 
+.resumeButton {
+  background-color: var(--color-primary-accent);
+  color: white;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border: 2px solid var(--color-primary-accent);
+}
+
+.resumeButton:hover {
+  background-color: transparent;
+  color: var(--color-primary-accent);
+  transform: translateY(-1px);
+}
+
 .mobileMenuButton {
   display: none;
   background: none;

@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         <h2 className={styles.title}>Software Engineer</h2>
         <div className={styles.cta}>
           <a 
-            href="https://drive.google.com/file/d/1116PndjxSuzK9IcwTpK6xwHc6ypj16LT/view?usp=sharing"
+            href="https://drive.google.com/file/d/1D4l_k_QMAeCDcWgeCUrF8ElUAYsaOOBQ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

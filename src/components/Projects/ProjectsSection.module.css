@@ -18,7 +18,7 @@
   font-size: var(--font-size-4xl);
   font-weight: 700;
   color: var(--color-primary-text);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .subtitle {
@@ -27,6 +27,28 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.intro {
+  font-size: 1.125rem;
+  color: var(--color-secondary-text);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.githubLink {
+  color: var(--color-primary-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  border-bottom: 2px solid transparent;
+}
+
+.githubLink:hover {
+  color: var(--color-hover);
+  border-bottom-color: var(--color-primary-accent);
 }
 
 .projectsGrid {
@@ -38,9 +60,10 @@
 .comingSoon {
   text-align: center;
   padding: var(--space-16);
-  background: white;
-  border-radius: var(--border-radius-xl);
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
   border: 2px dashed var(--color-borders);
+  box-shadow: var(--shadow-sm);
 }
 
 .comingSoon h3 {

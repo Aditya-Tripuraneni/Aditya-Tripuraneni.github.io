@@ -1,92 +1,275 @@
-.card {
-  background: white;
-  border-radius: var(--border-radius-xl);
-  padding: var(--space-8);
+.cardContainer {
+  perspective: 2000px;
+  cursor: pointer;
+  width: 100%;
+  height: 420px; /* Fixed height for all cards */
+  margin-bottom: var(--space-12);
+  position: relative;
+  z-index: 1;
+}
+
+.cardContainer.flipped {
+  z-index: 10; /* Elevate flipped card above others */
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
-  border: 1px solid var(--color-borders);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.cardContainer.flipped .cardInner {
+  transform: rotateY(180deg) scale(1.02);
 }
 
+.cardContainer:hover .cardInner {
+  box-shadow: var(--shadow-xl);
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid rgba(51, 39, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cardFront {
+  z-index: 2;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background: var(--color-surface);
+  overflow-y: auto;
+}
+
+/* Custom scrollbar for card back */
+.cardBack::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cardBack::-webkit-scrollbar-track {
+  background: rgba(51, 39, 42, 0.05);
+  border-radius: 3px;
+}
+
+.cardBack::-webkit-scrollbar-thumb {
+  background: var(--color-secondary-accent);
+  border-radius: 3px;
+}
+
+.cardBack::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-accent);
+}
+
+/* Front Content Styles */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
   flex-wrap: wrap;
   gap: var(--space-4);
 }
 
 .titleSection {
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
 }
 
 .title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
   color: var(--color-primary-text);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   line-height: 1.3;
 }
 
 .company {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   color: var(--color-primary-accent);
-  font-weight: 500;
-  margin-bottom: var(--space-1);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
 }
 
 .location {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-secondary-text);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .duration {
   font-size: var(--font-size-sm);
-  color: var(--color-secondary-text);
-  font-weight: 500;
-  padding: var(--space-2) var(--space-4);
-  background-color: rgba(59, 130, 246, 0.1);
-  border-radius: var(--border-radius-lg);
+  color: var(--color-primary-text);
+  font-weight: 600;
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--color-secondary-accent);
+  border-radius: var(--border-radius-md);
   white-space: nowrap;
   align-self: flex-start;
 }
 
 .description {
-  margin-bottom: 0;
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
 }
 
 .descriptionItem {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   color: var(--color-secondary-text);
-  line-height: 1.6;
-  margin-bottom: var(--space-3);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
   position: relative;
-  padding-left: var(--space-6);
+  padding-left: var(--space-8);
 }
 
 .descriptionItem::before {
   content: '•';
   color: var(--color-primary-accent);
   font-weight: bold;
+  font-size: var(--font-size-xl);
   position: absolute;
   left: var(--space-2);
+  top: -2px;
+}
+
+/* Back Content Styles */
+.backContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.backTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary-text);
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-primary-accent);
+  padding-bottom: var(--space-2);
+  flex-shrink: 0;
+}
+
+.achievements {
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.achievementItem {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary-text);
+  line-height: 1.5;
+  margin-bottom: var(--space-2);
+  position: relative;
+  padding-left: var(--space-5);
+}
+
+.achievementItem::before {
+  content: '▹';
+  color: var(--color-primary-accent);
+  font-size: var(--font-size-lg);
+  position: absolute;
+  left: 0;
   top: 0;
 }
 
-.descriptionItem:last-child {
-  margin-bottom: 0;
+.techStackSection {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(51, 39, 42, 0.1);
+  flex-shrink: 0;
 }
 
+.techStackTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-primary-text);
+  margin-bottom: var(--space-2);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.techBadge {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-text);
+  background-color: var(--color-tertiary-accent);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.techBadge:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.flipBackHint {
+  margin-top: var(--space-3);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary-text);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.flipIcon {
+  font-size: var(--font-size-sm);
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .card {
+  .cardContainer {
+    height: 480px; /* Taller on mobile for readability */
+    margin-bottom: var(--space-10);
+  }
+  
+  .cardFront, .cardBack {
     padding: var(--space-6);
+  }
+  
+  .title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .company {
+    font-size: var(--font-size-lg);
+  }
+  
+  .descriptionItem {
+    font-size: var(--font-size-base);
+    padding-left: var(--space-6);
+  }
+  
+  .cardContainer.flipped .cardInner {
+    transform: rotateY(180deg) scale(1.01);
   }
   
   .header {
@@ -99,11 +282,18 @@
     text-align: center;
   }
   
-  .title {
-    font-size: var(--font-size-lg);
+  .achievementItem {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    margin-bottom: var(--space-2);
   }
   
-  .company {
-    font-size: var(--font-size-base);
+  .techBadge {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-3);
   }
+}
+
+.descriptionItem:last-child {
+  margin-bottom: 0;
 }

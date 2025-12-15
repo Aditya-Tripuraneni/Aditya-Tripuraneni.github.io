@@ -1,0 +1,198 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  padding: var(--space-8) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backButton {
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-6);
+  background: none;
+  border: none;
+  color: var(--color-primary-accent);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-md);
+}
+
+.backButton:hover {
+  background: rgba(255, 139, 167, 0.1);
+  transform: translateX(-4px);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--color-primary-text);
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-2);
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary-text);
+  margin-bottom: var(--space-12);
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  max-width: 800px;
+  padding: var(--space-8);
+}
+
+.stickyNote {
+  width: 300px;
+  height: 350px;
+  padding: var(--space-8);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stickyNote:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.foodNote {
+  background-color: var(--color-secondary-accent);
+  transform: rotate(-4deg);
+}
+
+.foodNote:hover {
+  transform: rotate(-2deg) translateY(-8px);
+}
+
+.interestingNote {
+  background-color: var(--color-tertiary-accent);
+  transform: rotate(5deg);
+}
+
+.interestingNote:hover {
+  transform: rotate(3deg) translateY(-8px);
+}
+
+.pin {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pin::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.noteContent {
+  text-align: center;
+  z-index: 1;
+}
+
+.noteEmoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.noteTitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-text);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+
+.noteSubtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-secondary-text);
+  font-style: italic;
+}
+
+.noteFold {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent var(--color-background) transparent;
+}
+
+.foodNote .noteFold {
+  border-color: transparent transparent var(--color-background) transparent;
+}
+
+.interestingNote .noteFold {
+  border-color: transparent transparent var(--color-background) transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .stickyNote {
+    width: 280px;
+    height: 320px;
+  }
+  
+  .foodNote {
+    transform: rotate(-2deg);
+  }
+  
+  .foodNote:hover {
+    transform: rotate(-1deg) translateY(-5px);
+  }
+  
+  .interestingNote {
+    transform: rotate(2deg);
+  }
+  
+  .interestingNote:hover {
+    transform: rotate(1deg) translateY(-5px);
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-top: var(--space-12);
+  }
+  
+  .backButton {
+    top: var(--space-4);
+    left: var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+}

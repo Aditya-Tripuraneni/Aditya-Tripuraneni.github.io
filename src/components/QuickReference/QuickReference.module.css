@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(51, 39, 42, 0.6); /* Dark brown overlay */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 1000;
@@ -29,14 +29,15 @@
 
 /* Modal Content */
 .modal {
-  background: #FFFFFF;
-  border-radius: 20px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
   max-width: 700px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
   animation: slideIn 0.3s ease;
+  border: 1px solid rgba(51, 39, 42, 0.1);
 }
 
 @keyframes slideIn {

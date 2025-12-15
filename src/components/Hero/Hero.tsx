@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Hero.module.css';
 import QuickReference from '../QuickReference/QuickReference';
 
 const Hero: React.FC = () => {
   const [isQuickRefOpen, setIsQuickRefOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -18,6 +20,10 @@ const Hero: React.FC = () => {
 
   const closeQuickReference = () => {
     setIsQuickRefOpen(false);
+  };
+
+  const goToMyBrain = () => {
+    navigate('/my-brain');
   };
 
   return (
@@ -40,6 +46,12 @@ const Hero: React.FC = () => {
             onClick={openQuickReference}
           >
             Cheat Sheet
+          </button>
+          <button 
+            className={styles.myBrainButton}
+            onClick={goToMyBrain}
+          >
+            My Brain
           </button>
         </div>
       </div>

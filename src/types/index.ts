@@ -6,6 +6,7 @@ export interface WorkExperience {
   duration: string;
   description: string[];
   achievements: string[];
+  techStack?: string[];
 }
 
 export interface Project {

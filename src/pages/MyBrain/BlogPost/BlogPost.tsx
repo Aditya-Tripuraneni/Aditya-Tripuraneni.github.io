@@ -51,11 +51,21 @@ const BlogPost: React.FC<BlogPostProps> = ({ category }) => {
     const elements: React.ReactNode[] = [];
     let currentParagraph: string[] = [];
 
+    const parseText = (text: string): React.ReactNode[] => {
+      const parts = text.split(/(\*\*.*?\*\*)/g);
+      return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
+          return <strong key={index}>{part.slice(2, -2)}</strong>;
+        }
+        return part;
+      });
+    };
+
     const flushParagraph = () => {
       if (currentParagraph.length > 0) {
         elements.push(
           <p key={elements.length} className={styles.paragraph}>
-            {currentParagraph.join(' ')}
+            {parseText(currentParagraph.join(' '))}
           </p>
         );
         currentParagraph = [];
@@ -83,7 +93,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ category }) => {
         flushParagraph();
         elements.push(
           <li key={index} className={styles.listItem}>
-            {trimmedLine.replace('- ', '')}
+            {parseText(trimmedLine.replace('- ', ''))}
           </li>
         );
       } else if (trimmedLine === '') {
@@ -103,9 +113,29 @@ const BlogPost: React.FC<BlogPostProps> = ({ category }) => {
         {backLabel}
       </button>
 
+      {/* Floating images for food blogs */}
+      {blog.images && blog.images.length > 0 && (
+        <div className={styles.floatingImages}>
+          {blog.images.map((image, index) => (
+            <div 
+              key={index} 
+              className={`${styles.floatingImage} ${styles[`floatingImage${index + 1}`]}`}
+            >
+              <img src={image} alt={`${blog.title} - Image ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+      )}
+
       <article className={styles.container}>
         <header className={styles.header}>
           <h1 className={styles.title}>{blog.title}</h1>
+          {blog.location && (
+            <span className={styles.location}>{blog.location}</span>
+          )}
+          {blog.rating && (
+            <span className={styles.rating}>Rating: {blog.rating}</span>
+          )}
           <time className={styles.date}>{formatDate(blog.date)}</time>
         </header>
 

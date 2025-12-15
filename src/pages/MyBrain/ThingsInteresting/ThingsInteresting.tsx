@@ -24,7 +24,7 @@ const ThingsInteresting: React.FC = () => {
           {blogs.length > 0 ? (
             blogs.map((blog) => (
               <BlogCard 
-                key={blog.id} 
+                key={blog.slug} 
                 blog={blog} 
                 onClick={() => navigate(`/my-brain/things-interesting/${blog.slug}`)}
               />

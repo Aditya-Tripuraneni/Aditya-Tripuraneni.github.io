@@ -1,5 +1,4 @@
 export interface BlogPost {
-  id: string;
   slug: string;
   title: string;
   date: string;
@@ -7,16 +6,79 @@ export interface BlogPost {
   content: string;
   tags: string[];
   category: 'food-blogs' | 'things-interesting';
+  images?: string[];
+  rating?: string;
+  location?: string;
 }
 
 export const blogPosts: BlogPost[] = [
+  // Food Blogs
+  {
+    slug: 'excellent-bbq-house-first-markham',
+    title: 'Excellent B.B.Q House - First Markham Place',
+    date: '2025-11-22',
+    preview: 'Found this Chinese BBQ spot at First Markham Place and it absolutely lived up to its name. 9/10 would (and will) go back.',
+    images: [
+      '/images/blog/food/excellent-bbq-house-nov22.jpg',
+      '/images/blog/food/excellent-bbq-house-food-nov22.jpg'
+    ],
+    rating: '9/10',
+    location: 'First Markham Place',
+    content: `
+## Rating: 9/10
+
+Found this spot tucked into First Markham Place, and honestly, the name doesn't lie. This place is fire.
+
+## The Food
+
+The BBQ here is seriously good. 
+
+I ordered their 3 meat special and I got Roasted Duck, Char Siu, and Roasted Pork Belly. 
+The Duck and Char Siu were probably my favourite ones out of the 2 meats becuase of how fatty they were. If you like crunchy crispy pieces, their pork belly is just that. 
+
+With the meats, comes some rice and some soup and vegetables as well. 
+
+The best part is this was all $10.95 which is insanely cheap for the quality and quantity you're getting.
+
+## The Atmosphere
+
+The place itself is very busy and I can see why. This place seems to be very popular so if you do plan on going I recommend you go before 5pm if possible if on a weekday. 
+They also only take cash which is another thing to note :) 
+
+You can sit down in the food court and there are a bunch of tables to enjoy the food plus there are plenty of small shops you can check out after. \n
+
+There is a surprisingly good bubble tea spot with fresh fruit near by as well. \n
+
+I am not even a fan of bubble tea but when I got here I always go get the bubble tea too lol.
+
+The kitchen is visible from the front, so you can see all the meats hanging and being prepped. 
+
+
+## The Service
+
+Staff here are efficient and friendly. They're busy so it's not like you're getting a full conversation, but they're helpful, they get your order right, and they're quick. That's really all you need.
+
+
+## Would I Go Back?
+
+Yes. 
+
+The only reason it's not a 10/10 is because nothing's perfect, but this is about as close as you get for Chinese BBQ in the area. If you're at First Markham Place or anywhere nearby, definitely check it out.
+
+**What to Order:** The triple meat combo. 
+
+**Best Time to Go:** Lunch or early dinner gets busy but that's when everything is freshest.
+    `,
+    tags: ['Chinese BBQ', 'First Markham Place', 'Markham', '9/10'],
+    category: 'food-blogs'
+  },
+
   // Things Interesting
   {
-    id: '1',
     slug: 'attention-is-all-you-need',
     title: 'Attention is All You Need',
     date: '2025-07-06',
-    preview: 'I finally decided to read the paper "Attention is All You Need". I can\'t lie after taking 4ML3 from McMaster this paper was pretty interesting exploring new concepts of Machine Learning...',
+    preview: 'I finally decided to read the paper "Attention is All You Need". I can\'t lie after taking 4ML3 from McMaster this paper was pretty interesting exploring new concepts of Machine Learning.',
     content: `
 ## The Big Idea
 
@@ -57,11 +119,10 @@ If you're into ML at all, it's definitely worth reading the original paper. It's
     category: 'things-interesting'
   },
   {
-    id: '2',
     slug: 'persona-vectors-meeting-in-a-park',
     title: 'Persona Vectors - Meeting in a Park',
     date: '2025-07-14',
-    preview: 'So there\'s this thing called "Papers in the Park" started by an ex-RBC AI engineer, and it\'s exactly what it sounds like. Students meet up in a park and read research papers together...',
+    preview: 'So there\'s this thing called "Papers in the Park" started by an ex-RBC AI engineer, and it\'s exactly what it sounds like. Students meet up in a park and read research papers together',
     content: `
 ## The Core Idea
 

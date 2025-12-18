@@ -11,6 +11,7 @@
     "deploy": "npm run build"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.10.1"

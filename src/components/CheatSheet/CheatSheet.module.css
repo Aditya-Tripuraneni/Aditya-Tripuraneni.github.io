@@ -1,0 +1,300 @@
+/* Floating Button */
+.floatingButton {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary-accent);
+  border: 2px solid var(--color-borders);
+  color: var(--color-surface);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingButton:hover {
+  background: var(--color-hover);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.floatingButton:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(51, 39, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: var(--space-4);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modalContent {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--color-borders);
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  border-bottom: 2px solid var(--color-secondary-accent);
+  background: var(--color-background);
+}
+
+.modalTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-primary-text);
+  margin: 0;
+}
+
+.closeButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--color-borders);
+  color: var(--color-primary-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background: var(--color-primary-accent);
+  color: var(--color-surface);
+  border-color: var(--color-primary-accent);
+}
+
+/* Modal Body */
+.modalBody {
+  padding: var(--space-6);
+  overflow-y: auto;
+  max-height: calc(85vh - 80px);
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary-text);
+  margin: 0 0 var(--space-4) 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-tertiary-accent);
+  display: inline-block;
+}
+
+/* About Section */
+.aboutSection {
+  margin-bottom: var(--space-8);
+}
+
+.aboutText {
+  font-size: var(--font-size-base);
+  color: var(--color-secondary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Cheat Sheet Section */
+.cheatSheetSection {
+  margin-bottom: var(--space-4);
+}
+
+.cheatSheetBox {
+  background: var(--color-background);
+  border: 2px solid var(--color-borders);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cheatSheetText {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-text);
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Button Container */
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.copyButton {
+  background: var(--color-primary-accent);
+  color: var(--color-surface);
+  border: 2px solid var(--color-borders);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.copyButton:hover {
+  background: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.copyButton:active {
+  transform: translateY(0);
+}
+
+.copiedMessage {
+  color: var(--color-primary-text);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  background: var(--color-tertiary-accent);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-sm);
+  animation: fadeInOut 2s ease-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Scrollbar Styling */
+.modalBody::-webkit-scrollbar,
+.cheatSheetBox::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalBody::-webkit-scrollbar-track,
+.cheatSheetBox::-webkit-scrollbar-track {
+  background: var(--color-background);
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb,
+.cheatSheetBox::-webkit-scrollbar-thumb {
+  background: var(--color-secondary-accent);
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover,
+.cheatSheetBox::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floatingButton {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .modalContent {
+    max-height: 90vh;
+    margin: var(--space-2);
+  }
+
+  .modalHeader {
+    padding: var(--space-4);
+  }
+
+  .modalTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .modalBody {
+    padding: var(--space-4);
+    max-height: calc(90vh - 70px);
+  }
+
+  .cheatSheetBox {
+    max-height: 200px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .copyButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .copiedMessage {
+    text-align: center;
+  }
+}

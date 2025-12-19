@@ -33,7 +33,9 @@ export const workExperienceData: WorkExperience[] = [
     location: 'Toronto, ON',
     duration: 'May 2025 – Aug. 2025',
     description: [
-      'Designed a patent pending solution for Capital Markets'
+      'Amplify Program 2025',
+      'Designed a patent pending solution for Capital Markets',
+      'Presented to C-Suite Executives'
     ],
     achievements: [
       'Designed an agentic AI workflow to analyze hedge fund movement directly helping traders draw insights.',

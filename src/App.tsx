@@ -1,12 +1,14 @@
 // src/App.tsx
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import WorkExperienceSection from './components/WorkExperience/WorkExperienceSection'
 import ProjectsSection from './components/Projects/ProjectsSection'
 import Footer from './components/Footer/Footer'
+import CheatSheet from './components/CheatSheet/CheatSheet'
 import MyBrain from './pages/MyBrain/MyBrain'
 import FoodBlogs from './pages/MyBrain/FoodBlogs/FoodBlogs'
 import ThingsInteresting from './pages/MyBrain/ThingsInteresting/ThingsInteresting'
@@ -36,6 +38,8 @@ const App: React.FC = () => (
         <Route path="/my-brain/food-blogs/:slug" element={<BlogPost category="food-blogs" />} />
         <Route path="/my-brain/things-interesting/:slug" element={<BlogPost category="things-interesting" />} />
       </Routes>
+      <CheatSheet />
+      <Analytics />
     </div>
   </Router>
 )

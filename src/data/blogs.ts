@@ -14,16 +14,194 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   // Food Blogs
   {
+    slug: 'xuan-bakery',
+    title: 'Xuan Bakery',
+    date: '2025-12-20',
+    preview: 'A Chinese bakery. Tasty pastries with great prices.',
+    images: [
+      '/images/blog/food/2025-12-20/xuan-bakery-1-dec-20-2025.jpeg',
+      '/images/blog/food/2025-12-20/xuan-bakery-2-dec-20-2025.jpeg',
+      '/images/blog/food/2025-12-20/xuan-bakery-3-dec-20-2025.jpeg'
+    ],
+    rating: '9/10',
+    location: '325 Bamburgh Cir Unit A110, Scarborough, ON M1W 3Y1',
+    content: `
+## Rating: 9/10
+
+This is the first time I have tried Xuan Bakery and I will say I am very impressed. 
+As usual I went with my friend to try this spot. In fact we tried this spot the same day we tried HOJA mi-sua and KS BBQ & Noodles House which are 2 other blogs I wrote about.
+
+## The Food
+
+I got their egg tart, custard fried bun and their classic pineapple bun. I only got pictures of the custard fried bun and pineapple bun because the egg tart was gone before I could take a picture lol.
+
+The custard fried bun was actually really soft and light on the stomach. 
+
+They had light powdered sugar on the outside of the bun and that was also a really nice complement to the custard inside. The custard tasted very similar to vanilla even though it looked orange like mango. 
+
+## The Atmosphere
+
+It's a small bakery with like 3 spots to sit down. But the focus is just good food. They also have nice sample treats for you to try that are free of charge. When I went they had this bread that had cream on it which was really soft and sweet. 
+
+## The Cost
+
+For a bakery this was a very cheap local bakery.
+The prices are incredibly reasonable for the quality you get. 
+
+The egg tart was $2 per piece, the custard fried bun was $2.50 and the pineapple bun was $2.50 as well.
+
+## The Service
+
+Quick and efficient. Everything is already freshly baked so you are not waiting for a long time to get your food.
+
+## Would I Go Back?
+
+Absolutely. Xuan Bakery has become a go to spot for me when I'm craving baked goods. 
+
+I am lowkey addicted to their custard fried bun now.
+
+**What to Order:** The custard fried bun is a must try. Also their egg tarts are really good too.
+
+**Best Time to Go:** Morning for the freshest selection of pastries.
+    `,
+    tags: ['Chinese', 'Bakery', 'Scarborough', '9/10'],
+    category: 'food-blogs'
+  },
+  {
+    slug: 'HOJA mi-sua',
+    title: 'HOJA mi-sua',
+    date: '2025-12-20',
+    preview: 'Solid Taiwanese spot with excellent rice and meat dishes.',
+    images: [
+      '/images/blog/food/2025-12-20/hoja-dec-20-2025.jpeg',
+      '/images/blog/food/2025-12-20/hoja-dec-1-20-2025.jpeg'
+    ],
+    rating: '8.5/10',
+    location: '3235 Hwy 7 #27, Markham, ON L3R 3P9',
+    content: `
+## Rating: 8.5/10
+
+I came across this Taiwanese spot on Instagram reels so I had to give it a try. I actually went here with one of my friends. To be honest, the majority of these blog posts are with my friends. Anyways if you're craving some authentic Taiwanese comfort food, I must say this place is it.
+
+## The Food
+
+I got their braised pork belly with rice and sausage. It came with a yellow vegetable side which I am honestly not sure what it was. And the rice had green onions as well. 
+
+The portion sizes are not crazy big but they are decent enough to fill you up. I eat a lot and I was full after 1 small bowl.
+
+My friend got their chicken and rice dish which was also really good. I had a bite of the chicken and it was not dry or too crunchy. It was the perfect mix of crunchiness and softness. 
+
+I think a really nice touch to this place is they have chilli oil on the side along with some buttery garlic which is all in a small container and you can add as much as you want.
+Adding the chilli oil and the buttery garlic made the rice taste so good. It already tasted good on its own but adding those 2 condiments really made it next level.
+
+## The Atmosphere
+
+It is a small restaurant that is very casual. I always look at how clean a restaurant is before I eat there and this place was very clean, including the washroom!
+
+I would say this place is really great vibes if you come here when it's raining outside or when it's gloomy and dark outside. Also it's really nice hot food to have in the winter!
+
+## The Cost
+
+Prices are reasonable for what you get. Not the cheapest option out there, but the portions are good and the quality justifies the cost. Expect to spend around $15 to $20 per person for a filling meal.
+
+It is also worth noting that you pay online at the table! They have this cart option that you can check out the items you bought and just pay online which is convenient if you don't want to wait in line.
+
+## The Service
+
+The food came pretty quickly! Staff was also very polite and friendly.
+
+## Would I Go Back?
+
+Yes, but maybe not as my first choice. Here's the thing. The food is good, genuinely good. But it's missing that extra something that would make it a 9/10. Maybe it's the atmosphere, maybe I just haven't found their best dish yet.
+
+The braised pork rice is worth going back for though. That alone is reason enough to return.
+
+**What to Order:** The braised pork rice with red sausage is a must. Their chicken dishes are solid too.
+
+**Best Time to Go:** Weekday lunch to avoid the crowds.
+    `,
+    tags: ['Taiwanese', 'Rice Dishes', 'Toronto', '8.5/10'],
+    category: 'food-blogs'
+  },
+  {
+    slug: 'ks-bbq-noodles-house',
+    title: 'KS BBQ & Noodles House',
+    date: '2025-12-20',
+    preview: 'Another solid BBQ spot that nails the fundamentals. Great flavors, generous portions, and prices that won\'t break the bank.',
+    images: [
+      '/images/blog/food/2025-12-20/kss-bbq-1-dec-20-2025.jpeg',
+      '/images/blog/food/2025-12-20/kss-bbq-2-dec-20-2025.jpeg'
+    ],
+    rating: '9/10',
+    location: '3255 Hwy 7 #258fc, Markham, ON L3R 3P9',
+    content: `
+## Rating: 9/10
+
+If you saw my very first food blog, you'd know I then visited their neighbour spot Excellent B.B.Q House.
+
+After trying that place, I was curious to see how KS BBQ & Noodles House compared.
+
+KS BBQ & Noodles House did not disappoint. Very similar to the Excellent B.B.Q House.
+
+## The Food
+
+I got their 3 meat on rice combo with pork broth which is the same thing I got at Excellent B.B.Q House for comparison.
+
+BUT! Instead of getting roasted pork, I got their chicken. 
+
+Let me first start off with the chicken because I am always very picky about dry chicken. This was genuinely the most moist tender chicken I have ever had. Like not even joking (maybe I should try other things lol).
+They gave a side dish of garlic, green onion mixed with some other spices that you should have when you eat the chicken too because it takes the flavour to a whole other world. 
+Also from an aesthetic standpoint their chicken looks golden which is quite visually appealing. 
+
+Now on to the duck and bbq pork. 
+
+Honestly, they were really similar in taste when comparing to Excellent B.B.Q House. The duck was very tender and juicy and the bbq pork was nice and fatty with crunch.
+
+## The Atmosphere
+
+You can see the meats hanging in the window, which is always a good sign. The place is clean and functional. You're here for the food, and they know it.
+
+It gets busy during lunch rush, so expect to wait a bit if you come at peak times. But the turnover is fast.
+
+I came here on a Saturday around 2pm which was peak activity so I did have to wait a bit.
+
+## The Cost
+
+KS BBQ & Noodles House has very cheap prices for their food and it's quite similar to Excellent B.B.Q House.
+I spent around $12 for my meal, which came with 3 meats, rice, cabbage, and a soup. That is a really good deal in my honest opinion.
+
+## The Service
+
+Quick and efficient. 
+
+No time for small chat lol, but they are really kind and get your order right.
+
+## Would I Go Back?
+
+Absolutely. KS BBQ & Noodles House does what it does really well. The BBQ is on point and the prices are right. 
+
+It's the kind of place I'd recommend to anyone looking for solid Chinese BBQ.
+
+I would also say that this place ties with Excellent B.B.Q House for my favourite Chinese BBQ spot in the area.
+
+**What to Order:** The three meat combo over rice.
+
+**Best Time to Go:** Early lunch (11:30am) to beat the rush and get the freshest cuts.
+    `,
+    tags: ['Chinese BBQ', 'Noodles', 'Markham', '9/10'],
+    category: 'food-blogs'
+  },
+  {
     slug: 'excellent-bbq-house-first-markham',
     title: 'Excellent B.B.Q House - First Markham Place',
     date: '2025-11-22',
     preview: 'Found this Chinese BBQ spot at First Markham Place and it absolutely lived up to its name. 9/10 would (and will) go back.',
     images: [
-      '/images/blog/food/excellent-bbq-house-nov22.jpg',
-      '/images/blog/food/excellent-bbq-house-food-nov22.jpg'
+      '/images/blog/food/2025-11-22/excellent-bbq-house-nov22.jpg',
+      '/images/blog/food/2025-11-22/excellent-bbq-house-food-nov22.jpg'
     ],
     rating: '9/10',
-    location: 'First Markham Place',
+    location: '3255 Hwy 7, Markham, ON L3R 3P9',
     content: `
 ## Rating: 9/10
 

@@ -17,9 +17,9 @@ export const projectsData: Project[] = [
   },
   {
     id: '3',
-    title: 'BizzConnect',
-    description: '1st place winner at DeltaHacks Hackathon 2023',
+    title: 'C++ In-Memory Database',
+    description: 'Multi-threaded, sharded key-value store with TTL support, achieving up to 5.6× speedup via reader-writer locks and async background cleanup',
     technologies: [],
-    githubUrl: 'https://github.com/Aditya-Tripuraneni/Delta-Hacks'
+    githubUrl: 'https://github.com/Aditya-Tripuraneni/In-Memory-Database'
   }
 ];

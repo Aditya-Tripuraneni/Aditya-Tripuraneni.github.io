@@ -14,6 +14,49 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   // Food Blogs
   {
+    slug: 'konak-turkish-cuisine',
+    title: 'Konak Turkish Cuisine',
+    date: '2026-02-09',
+    preview: 'A Turkish spot in Scarborough with great food and vibes.',
+    rating: '9/10',
+    location: '2501 Victoria Park Ave Unit 3, Scarborough, ON M1T 1A1',
+    content: `
+## Rating: 9/10
+
+This was the second time I've had food from a Turkish restaurant and this place felt very fancy. I went here with my partner as we wanted to try another Turkish place after previously going to one before.
+
+## The Food
+
+At Konak I got their Oven Beyti which is Veal & lamb, tomato sauce, yogurt, sizzled butter, tomato and green hot peppers.
+
+The food tasted delicious. The lamb was extremely tender which I guess makes sense since it's veal, but also the sizzled butter made it taste even better. It would almost melt in my mouth, that's probably the best way to describe it. They had a thick yogurt on the side which was a nice side and I think there was some olive oil on it? But I am not sure. Regardless, it tasted really good lol.
+
+It was $28.99 when I ordered it, but the portions were massive. Initially I thought I would go order more food because I can eat a lot but this filled me up pretty quick.
+
+One thing I liked about Konak and all the Turkish restaurants I have been to so far, is they serve complimentary bread with some side sauces. I did some research and I believe it's called Lavas bread. It was really good and it was fresh when it was served to us.
+
+## The Atmosphere
+
+This was a medium size restaurant but it was extremely fancy looking. The tables felt like they were made out of marble although I don't know for sure. But they were big and that's what matters to me. Every time I have gone to a restaurant with my partner, if it's a table for 2, usually I find the table very small. But the table here was actually big and I had room for my arms, plate and phone on the table which was nice. There was Turkish music playing in the background which was nice to listen to. The plaza to park here is a bit small though so parking can be tough in the winter when there are large snowbanks everywhere lol. I forgot to mention the bathrooms are also extremely clean. Probably one of the cleanest washrooms I have seen in some of the many restaurants I have been to. That is major bonus points for me.
+
+## The Service
+
+The waitress who served us was also really friendly and kind and we didn't wait very long for the food. I'd say we waited probably 10 minutes max.
+
+## The Cost
+
+I'd say Konak is fairly priced. It isn't cheap and it's not expensive. Their portion sizes more than make up for the cost in my opinion and the complimentary Lavas bread that is served.
+
+## Would I Go Back?
+
+100%. Out of all the Turkish restaurants I have been to (only 3 lol) this one was my favourite. Writing this review now, I have tried the Oven Beyti at one other place called Mabelle Turkish Restaurant and I would prefer the one at Konak because the portions were larger and the meat was more tender. It's worth noting that Konak is pretty busy around 6-9 pm which I guess is peak hours.
+
+I still need to do reviews on the other 2 but I'll get to those whenever.
+    `,
+    tags: ['Turkish', 'Dining', 'Scarborough', '9/10'],
+    category: 'food-blogs'
+  },
+  {
     slug: 'xuan-bakery',
     title: 'Xuan Bakery',
     date: '2025-12-20',

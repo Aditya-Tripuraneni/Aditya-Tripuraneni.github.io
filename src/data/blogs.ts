@@ -296,6 +296,61 @@ The only reason it's not a 10/10 is because nothing's perfect, but this is about
 
   // Things Interesting
   {
+    slug: 'intellagent-agent-evals',
+    title: 'IntellAgent: Actually Testing Your AI Agent',
+    date: '2026-05-15',
+    preview: 'How do you know if your AI chatbot actually follows the rules you gave it? I went down this rabbit hole with IntellAgent and ended up contributing Ollama support to the project.',
+    content: `
+## The Problem Nobody Talks About
+
+I was going down a rabbit hole of agent evaluation frameworks a few weeks ago when I came across IntellAgent, an open-source framework backed by an arxiv paper from Plurai. It sounded interesting so I started digging in.
+
+The more I read, the more one question kept nagging at me: how do you actually know if your AI chatbot follows the rules you gave it?
+
+This sounds obvious but it's a genuinely hard problem. The go-to benchmark for conversational AI agents, τ-bench, has 50 hand-curated airline test cases and 115 retail ones. That's it. And all you get at the end is a pass/fail score on the whole conversation. You don't know which rule broke down, which combination of rules is risky, or how your agent behaves when things get complicated. IntellAgent set out to fix that.
+
+## The Policy Graph
+
+The part that actually surprised me was how IntellAgent handles your agent's rules.
+
+You give it your chatbot's system prompt and it reads through it, extracts all the individual policies (things like "only give hints, don't give direct answers" or "always use age-appropriate language"), and builds a graph connecting them. Each policy is a node with a challenge score from 1 to 5. The edges between nodes are weighted by how related two policies are to each other.
+
+Why does that matter? Because not all rule combinations are equally hard to satisfy at the same time. A student asking a question that simultaneously tests "give hints only" and "foster independence" is a much harder scenario than one that only tests "use age-appropriate language." The graph encodes exactly where the difficult intersections are, so the framework knows where to focus its testing.
+
+What I found clever about this is that the graph also distributes risk. If the LLM mis-extracts one policy, it only affects the edges and scenarios tied to that node. The rest of the graph stays intact.
+
+## How the Pipeline Actually Works
+
+Once the policy graph exists, IntellAgent runs two more phases.
+
+The second phase generates test scenarios by sampling combinations of policies from the graph, weighted toward harder combos based on those challenge scores. Each scenario gets a difficulty level between 5 and 10 and optionally gets a realistic database state injected so your chatbot is working with real-looking data. This is fully synthetic but grounded in the structure of your actual system prompt.
+
+The third phase runs the simulation. A user agent reads the scenario details and starts a multi-turn conversation with your chatbot. At each step it knows what the expected behavior should be based on the policies in play. If the chatbot violates a policy or fails the task, the user can end the conversation early. A critique LLM then scores the whole interaction at the policy level, not just overall.
+
+The result reported in the paper is a 0.98 Pearson correlation with τ-bench across the airline domain, using entirely synthetic data. That's a strong signal that the evaluation is actually measuring something real.
+
+## My Contribution: Running It Locally
+
+After I understood how the framework worked, I noticed a gap. Running IntellAgent required API keys for every LLM in the pipeline: one for policy extraction, one for scenario generation, one for the simulated user, one for the critique LLM, and potentially one for the chatbot being evaluated. Fine if you're already paying for API access, but it puts the framework out of reach for anyone who just wants to experiment locally.
+
+So I opened PR #97 to add Ollama support.
+
+The core of it was adding an ollama branch inside get_llm(), the function that resolves LLM configs into LangChain objects. It uses langchain_ollama.ChatOllama under the hood, defaulting to localhost:11434 where Ollama runs and allowing a HOST override in llm_env.yml for remote setups. I also wrote config/config_ollama.yml, a full working config you can point at the education example to try the whole pipeline with a local model. And I added tests/test_ollama_provider.py along with a root-level conftest.py, which ended up being the project's first test files.
+
+With Ollama support, the whole evaluation pipeline runs in three commands. Pull a model, point the config at it, run. Verified working on qwen2.5:7b, llama3.1:8b, and mistral:7b-instruct. No API key required.
+
+## Why This Matters
+
+Agent evals are still a genuinely open problem. Most of what exists is either too small to be statistically meaningful or too tied to specific domains to generalize. The fact that a fully synthetic benchmark can correlate at 0.98 with a manually curated one is a strong argument for this kind of automated, graph-driven approach.
+
+What I keep thinking about after exploring this is how much the policy graph concept could generalize. Right now it works on your system prompt. But the same idea, extracting rules, scoring their difficulty, mapping their relationships, could apply to a lot of other structured evaluation problems. That feels like a useful mental model beyond just this framework.
+
+If you're building chatbots or agentic systems and want to actually understand how they fail, IntellAgent is worth a look. And if you want to run it without touching your API quota, the config is in the repo.
+    `,
+    tags: ['AI', 'Agent Evals', 'Open Source', 'LLMs'],
+    category: 'things-interesting'
+  },
+  {
     slug: 'attention-is-all-you-need',
     title: 'Attention is All You Need',
     date: '2025-07-06',

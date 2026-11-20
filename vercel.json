@@ -1,3 +1,6 @@
 {
-  "outputDirectory": "docs"
+  "outputDirectory": "docs",
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
 }

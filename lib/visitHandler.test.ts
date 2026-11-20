@@ -47,7 +47,7 @@ function makeFetch(opts: { discordThrows?: boolean } = {}) {
   const calls: { url: string; body?: string }[] = []
   const fetchFn = (async (url: string, init?: RequestInit) => {
     calls.push({ url, body: init?.body as string | undefined })
-    if (url.startsWith('https://ipinfo.io')) {
+    if (new URL(url).hostname === 'ipinfo.io') {
       return { ok: true, json: async () => ({ org: 'AS15169 Google LLC', region: 'Ontario' }) }
     }
     if (opts.discordThrows) throw new Error('discord down')

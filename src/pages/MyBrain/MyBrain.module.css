@@ -23,7 +23,7 @@
 }
 
 .backButton:hover {
-  background: rgba(255, 139, 167, 0.1);
+  background: rgba(210, 54, 105, 0.1);
   transform: translateX(-4px);
 }
 

@@ -4,7 +4,7 @@
   padding: var(--space-6);
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
-  border: 1px solid rgba(51, 39, 42, 0.05);
+  border: 1px solid #d5d8de;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -21,7 +21,7 @@
   width: 100%;
   height: 220px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 139, 167, 0.1), rgba(255, 198, 199, 0.1));
+  background: linear-gradient(135deg, rgba(210, 54, 105, 0.1), rgba(229, 231, 235, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;

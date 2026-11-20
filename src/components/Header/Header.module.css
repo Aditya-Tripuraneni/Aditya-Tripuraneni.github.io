@@ -3,10 +3,10 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(250, 238, 231, 0.9); /* #faeee7 with opacity */
+  background-color: rgba(255, 255, 255, 0.9); /* #f7f8fa with opacity */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(51, 39, 42, 0.1); /* Subtle border using primary text color */
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1); /* Subtle border using primary text color */
   z-index: 1000;
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-sm);

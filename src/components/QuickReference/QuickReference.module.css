@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(51, 39, 42, 0.6); /* Dark brown overlay */
+  background: rgba(34, 34, 34, 0.6); /* Dark brown overlay */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 1000;
@@ -37,7 +37,7 @@
   max-height: 85vh;
   overflow-y: auto;
   animation: slideIn 0.3s ease;
-  border: 1px solid rgba(51, 39, 42, 0.1);
+  border: 1px solid rgba(34, 34, 34, 0.1);
 }
 
 @keyframes slideIn {

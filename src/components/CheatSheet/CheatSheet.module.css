@@ -36,7 +36,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(51, 39, 42, 0.6);
+  background: rgba(34, 34, 34, 0.6);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;

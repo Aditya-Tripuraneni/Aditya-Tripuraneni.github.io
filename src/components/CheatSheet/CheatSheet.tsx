@@ -1,29 +1,42 @@
 import React, { useState } from 'react';
+import { workExperienceData } from '../../data/workExperience';
+import { openSourceData } from '../../data/openSource';
 import styles from './CheatSheet.module.css';
 
 const CheatSheet: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showCopied, setShowCopied] = useState(false);
 
-  const aboutText = `Aditya Tripuraneni is a software engineering student with experience across healthcare, finance, and aerospace technology. He is currently a software engineering intern at PointClickCare, focusing on performance and data engineering. Previously, he was selected for the competitive RBC Amplify program, where he built AI-driven solutions for Capital Markets, contributing to a patent-pending AI agent architecture designed to generate insights from hedge fund data. His hands-on skills span Python, LangChain, SQL, Snowflake, and AWS Bedrock, complemented by broader experience from RBC's Data Science & Analytics team, McMaster Rocketry, and McMaster Faculty of Engineering Venture Academy. Aditya is known as a fast learner who thrives in collaborative environments, bringing strong backend development skills, a passion for problem-solving, and an energetic presence. He is driven by building scalable, intelligent systems and consistently seeks to grow by tackling challenging, high-impact engineering problems.`;
+  const aboutText = `Aditya Tripuraneni is a backend and infrastructure engineer, mostly writing Kotlin, Java, and Go, studying Software Engineering (Co-op) at McMaster University. At Wealthsimple, he scaled a Kotlin and Temporal replay workflow from 30 to 100,000 accounts per request, led release cleanup that freed 26 TB, wrote a Go Kafka consumer posting events to the book of records across 100K+ accounts, and co-designed a read-only Kotlin and Spring AI MCP server so AI assistants can investigate data freshness. Before that he interned at PointClickCare, building a Java and Redis ingestion pipeline that indexed 30K+ clinical notes into Qdrant for RAG search, and at RBC, building an agentic AI hedge fund platform and BigQuery data validation tooling. In Winter 2027 he joins Shopify's Infrastructure team, writing Go for fleet automation across Kubernetes clusters on Google Cloud.`;
 
-  const cheatSheetText = `Aditya Tripuraneni – Software Engineer
+  const summaries: Record<string, string> = {
+    '1': 'Infrastructure team: Go, Kubernetes, fleet automation on Google Cloud.',
+    '2': 'Kotlin/Temporal replay at 100K accounts per request, 26 TB freed, Go Kafka consumer, Spring AI MCP server.',
+    '3': 'Java/Redis/Qdrant RAG ingestion pipeline: 30K+ notes across 100+ organizations.',
+    '4': 'Agentic AI hedge fund platform for 4+ trading teams; FastAPI latency down 47%.',
+    '5': 'BigQuery validation across 5M+ records; automation saving 100+ hours monthly.',
+    '6': 'Led software development for rocket telemetry systems.'
+  };
 
-Internships:
-• Software Engineer Intern – PointClickCare (Sept 2025 – Present)
-   Data + performance engineering.
+  const roles = workExperienceData
+    .map((exp) => `• ${exp.title} – ${exp.company} (${exp.duration})\n   ${summaries[exp.id] ?? ''}`)
+    .join('\n\n');
 
-• Software Developer Intern – RBC Amplify (May 2025 – Aug 2025)
-   Designed a patent pending solution for Capital Markets.
+  const openSource = openSourceData
+    .map((item) => `• ${item.project} (${item.stars}★): ${item.pullRequests.map((pr) => `#${pr.number}`).join(', ')} merged`)
+    .join('\n');
 
-• Software Engineer Intern – RBC, Data Science & Analytics (May 2024 – Aug 2024)
-   Built automation tools for data workflows.
+  const cheatSheetText = `Aditya Tripuraneni – Backend & Infrastructure Engineer
 
-• Software Engineer Co-Lead – McMaster Rocketry (Jul 2024 – May 2025)
-   Led software development for rocket telemetry systems.
+Experience:
+${roles}
 
-• Software Developer Intern – McMaster Faculty of Engineering Venture Academy (May 2023 – Aug 2023)
-   Developed educational technology platforms.
+Open Source:
+${openSource}
+
+Projects:
+• Praxis – https://praxis-amber.vercel.app
+• CacheLane – https://cache-lane.vercel.app
 
 Links:
 LinkedIn: https://www.linkedin.com/in/aditya-tripuraneni/

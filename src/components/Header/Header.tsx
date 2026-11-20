@@ -7,7 +7,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'experience', 'projects'];
+      const sections = ['hero', 'experience', 'open-source', 'projects'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -37,6 +37,7 @@ const Header: React.FC = () => {
   const navItems = [
     { id: 'hero', label: 'Home' },
     { id: 'experience', label: 'Experience' },
+    { id: 'open-source', label: 'Open Source' },
     { id: 'projects', label: 'Projects' }
   ];
 
